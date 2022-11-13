@@ -42,6 +42,7 @@ app.get('/order', (req: Request, res: Response) => {
 });
 app.get('/drink/order/:id', (req: Request, res: Response) => {
     const id = parseInt(req.params.id || '')
+    return res.sendStatus(404)
     if (Number.isNaN(id) || !(id in drinks)) {
         return res.sendStatus(404)
     }
