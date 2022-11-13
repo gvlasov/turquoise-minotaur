@@ -13,3 +13,11 @@ jobs:
         with:
           build: npm run build
           start: npm run start
+      - run: ls -al
+      - name: executing remote ssh commands
+        uses: appleboy/ssh-action@dce9d565de8d876c11d93fa4fe677c0285a66d78
+        with:
+          host: overgudie.com
+          username: site
+          key: ${{ secrets.MINOTAUR_SSH_KEY }}
+          script: whoami
