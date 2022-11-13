@@ -50,5 +50,5 @@ app.get('/drink/order/:id', (req: Request, res: Response) => {
 });
 app.use('/', express.static('public'))
 app.listen(port, () => {
-    console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
+    console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
