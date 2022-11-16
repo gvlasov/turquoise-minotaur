@@ -1,52 +1,56 @@
 import express, {Express, Request, Response} from 'express';
 
-interface Drink {
-    name: string
-    cost: number
+
+interface Places {
+    [id: number]: {
+        booked: boolean
+    }
 }
 
-interface Menu {
-    [id: number]: Drink
-}
-
-const drinks: Menu = {
+const places: Places = {
     1: {
-        name: 'IPA',
-        cost: 10
+        booked: false,
     },
     2: {
-        name: 'APA',
-        cost: 20
+        booked: false,
     },
     3: {
-        name: 'PUPA',
-        cost: 30
+        booked: false,
     },
     4: {
-        name: 'LUPA',
-        cost: 40
+        booked: false,
+    },
+    5: {
+        booked: false,
+    },
+    6: {
+        booked: false,
+    },
+    7: {
+        booked: false,
+    },
+    8: {
+        booked: false,
     },
 }
-const order: Drink[] = [];
 const app: Express = express();
 const port = 8100
 if (Number.isNaN(port)) {
     throw new Error('HTTP_PORT env variable is not defined')
 }
 
-app.get('/drink/list', (req: Request, res: Response) => {
-    res.send(drinks)
+app.get('/places/list', (req: Request, res: Response) => {
+
+    return res.send(places)
 });
-app.get('/order', (req: Request, res: Response) => {
-    res.send({order})
-});
-app.get('/drink/order/:id', (req: Request, res: Response) => {
+app.get('/places/book/:id', (req: Request, res: Response) => {
     const id = parseInt(req.params.id || '')
-    return res.status(404).send('')
-    if (Number.isNaN(id) || !(id in drinks)) {
+    if (Number.isNaN(id) || !(id in places)) {
+
+        return res.send('fuck you')
         return res.sendStatus(404)
     }
-    order.push(drinks[id])
+    places[id].booked = !places[id].booked
     return res.redirect('/')
 });
 app.use('/', express.static('public'))

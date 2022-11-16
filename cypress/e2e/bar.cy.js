@@ -1,7 +1,7 @@
 describe('Bar website test', () => {
-    it('can make an order', () => {
+    it('can book a place', () => {
         cy.visit('/')
-        cy.get('.menu > .item').contains('APA 20').click()
-        cy.get('.order > .item').should('be.visible')
+        cy.get('.places > .place').contains('1').click()
+        cy.get('.places > .place').contains('1').should('have.class', 'booked')
     })
 })

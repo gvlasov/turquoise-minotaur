@@ -1,71 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Бар</title>
-    <link rel="icon" href="/favicon.png">
+    <title>Bongworking</title>
+    <link rel="icon" href="/bongworking.png">
     <script type="text/javascript" src="request.js"></script>
     <style>
-        div.menu {
+        div.places {
             display: flex;
-            flex-flow: wrap;
-            gap: 6em 6em;
-            margin-bottom: 4em;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
         }
 
         body {
             padding: 0 4em;
             margin: 0;
-            font-family: 'sans-serif';
+            font-family: retrofont;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
         }
 
-        div.menu > .item {
-            flex: 40%;
+        .places > .place {
+            min-width: 1em;
+            flex-basis: 19%;
             padding: .5em 0;
             font-size: 5.0em;
-            font-weight: bold;
             text-align: center;
-            color: #312f2f;
+            color: white;
             text-decoration: none;
-            background: #2be7e7;
+            background: #12a875;
             border-radius: .7em;
-            border: .03em solid #039c9c;
-            box-sizing: border-box;
         }
 
-        div.menu > .item:hover {
-            border: .03em solid black;
-            background: #7bfcfc;
+        .place.booked {
+            background-color: #cb6565;
+            color: #312f2f;
         }
 
         h1 {
             font-size: 3em;
             text-align: center;
-            margin-bottom: 2em;
+            margin: 0;
         }
 
-        div.order {
-            font-size: 3em;
+        #page {
             display: flex;
-            gap: 1em;
             flex-wrap: wrap;
+            flex-flow: wrap;
+            flex-direction: column;
+            max-height: 100vh;
+            justify-content: space-evenly;
+            align-content: center;
+        }
+
+        #logo {
+            width: 30%;
+            flex-basis: 100%;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
         }
 
-        div.order > .item {
-            user-select: none;
-            background-color: #eaad14;
-            padding: .3em .6em;
-            border-radius: .7em;
-            border-color: #956c00;
-            box-sizing: border-box;
+        #logo > img {
+            max-width: 100%;
+        }
+
+        @font-face {
+            font-family: retrofont;
+            src: url(retrofont.ttf);
+        }
+
+        .page-heading {
+            font-family: retrofont;
+            color: #12a875;
+            font-size: 6em;
         }
 
     </style>
 </head>
 <body>
-<h1>Бар "Бирюзовый минотавр"</h1>
-<div class="menu">
+<div id="page">
+    <div id="logo">
+        <img src="bongworking.png"/>
+    </div>
+    <h1 class="page-heading">BONGWORKING</h1>
+    <div class="places"></div>
 </div>
-<div class="order"></div>
 </body>
 </html>
