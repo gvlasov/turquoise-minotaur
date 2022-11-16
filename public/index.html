@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bongworking</title>
+    <link rel="icon" href="/bongworking.png">
+    <script type="text/javascript" src="request.js"></script>
+    <style>
+        div.places {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
+        }
+
+        body {
+            padding: 0 4em;
+            margin: 0;
+            font-family: retrofont;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .places > .place {
+            min-width: 1em;
+            flex-basis: 19%;
+            padding: .5em 0;
+            font-size: 5.0em;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            background: #12a875;
+            border-radius: .7em;
+        }
+
+        .place.booked {
+            background-color: #cb6565;
+            color: #312f2f;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin: 0;
+        }
+
+        #page {
+            display: flex;
+            flex-wrap: wrap;
+            flex-flow: wrap;
+            flex-direction: column;
+            max-height: 100vh;
+            justify-content: space-evenly;
+            align-content: center;
+        }
+
+        #logo {
+            width: 30%;
+            flex-basis: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #logo > img {
+            max-width: 100%;
+        }
+
+        @font-face {
+            font-family: retrofont;
+            src: url(retrofont.ttf);
+        }
+
+        .page-heading {
+            font-family: retrofont;
+            color: #12a875;
+            font-size: 6em;
+        }
+
+    </style>
+</head>
+<body>
+<div id="page">
+    <div id="logo">
+        <img src="bongworking.png"/>
+    </div>
+    <h1 class="page-heading">BONGWORKING</h1>
+    <div class="places"></div>
+</div>
+</body>
+</html>
